@@ -7,5 +7,6 @@ namespace SportsStore.Models
 {
     interface IProductRepository
     {
+        IEnumerable<Product> Products { get; }
     }
 }
