@@ -15,8 +15,7 @@ namespace SportsStore.Controllers
 
         public RedirectToActionResult AddToCart(int productId, string returnUrl)
         {
-            Product product = repository.Products
-                .FirstOrDefault(p => p.ProductID == productId);
+            Product product = repository.Products.FirstOrDefault(p => p.ProductID == productId);
             if (product != null)
             {
                 Cart cart = GetCart();
@@ -26,11 +25,9 @@ namespace SportsStore.Controllers
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public RedirectToActionResult RemoveFromCart(int productId,
-            string returnUrl)
+        public RedirectToActionResult RemoveFromCart(int productId, string returnUrl)
         {
-            Product product = repository.Products
-                .FirstOrDefault(p => p.ProductID == productId);
+            Product product = repository.Products.FirstOrDefault(p => p.ProductID == productId);
             if (product != null)
             {
                 Cart cart = GetCart();
